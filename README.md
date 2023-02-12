@@ -15,6 +15,7 @@ As a user, I want the ability to:
 - sign up for an account.
 - sign in to my account.
 - sign out of my account.
+- change my password.
 - create a new boat.
 - view all boats. 
 - view a boat's name, location, type, and picture.
