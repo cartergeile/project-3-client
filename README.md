@@ -56,6 +56,6 @@ As a user, I want the ability to:
 ![Alt text](images/Updated%20Wire%20Frames.png)
 
 ## Entity Relationship Diagrams
-![ERD](images/NEW-ERD.png)
+![ERD](images/newesterd.png)
 
 ## Unsolved Problems / Major Hurdles 
