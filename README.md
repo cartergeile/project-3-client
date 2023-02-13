@@ -48,5 +48,6 @@ As a user, I want the ability to:
 ## Wireframes
 
 ## Entity Relationship Diagrams
+![ERD](img/erd.png)
 
 ## Unsolved Problems / Major Hurdles 
