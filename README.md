@@ -48,5 +48,6 @@ As a user, I want the ability to:
 ## Wireframes
 
 ## Entity Relationship Diagrams
+![ERD](images/Screen%20Shot%202023-02-10%20at%204.29.48%20PM.png)
 
 ## Unsolved Problems / Major Hurdles 
