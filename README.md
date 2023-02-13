@@ -36,13 +36,12 @@ As a user, I want the ability to:
 - create a new boat.
 - view all boats. 
 - view a boat's name, location, type, and picture.
+- view the weather in a boat's location.
 - update a boat.
 - delete a boat I have created. 
-- post a reservation to a boat.
-- view a reservation's rate, date, and duration.
-- view the weather during the selected dates of the reservation.
-- delete reservations I have made.
-- view a boat's reservation(s).
+- post a review to a boat.
+- delete reviews I have made.
+- view a boat's reviews. 
 ```
 
 ## Wireframes
