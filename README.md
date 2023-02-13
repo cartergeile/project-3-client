@@ -4,9 +4,26 @@ Aaron Humphres, Carter Geile, and Isobel Morales
 
 ## Overview 
 
+Frontend MERN stack app that consumes our boats API. 
+
+https://github.com/isobelmorales/project-3-api
+
+### Technologies Used
+- MongoDB
+- Mongoose
+- Express
+- React
+- Node
+- Bootstrap
+- Fly.io
+
 ### Link
 
 [TBC]
+
+## Approach
+
+## Installation Instructions
 
 ## User Stories 
 
@@ -27,3 +44,9 @@ As a user, I want the ability to:
 - delete reservations I have made.
 - view a boat's reservation(s).
 ```
+
+## Wireframes
+
+## Entity Relationship Diagrams
+
+## Unsolved Problems / Major Hurdles 
