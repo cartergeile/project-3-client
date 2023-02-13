@@ -47,6 +47,8 @@ As a user, I want the ability to:
 
 ## Wireframes
 
+![Alt text](images/YACHT%20WIREFRAMES.png)
+
 ## Entity Relationship Diagrams
 
 ## Unsolved Problems / Major Hurdles 
