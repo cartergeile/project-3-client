@@ -15,5 +15,5 @@ As a user, I want the ability to:
 - 
 ```
 
-# ERD
-![ERD](Screen%20Shot%202023-02-10%20at%204.29.48%20PM.png)
+#ERD
+![ERD](./Screen%20Shot%202023-02-13%20at%208.48.02%20AM.png)
