@@ -56,6 +56,6 @@ As a user, I want the ability to:
 ![Alt text](images/YACHT%20WIREFRAMES.png)
 
 ## Entity Relationship Diagrams
-![ERD](images/Screen%20Shot%202023-02-13%20at%208.48.02%20AM.png)
+![ERD](images/NEW-ERD.png)
 
 ## Unsolved Problems / Major Hurdles 
