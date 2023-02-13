@@ -53,7 +53,7 @@ As a user, I want the ability to:
 
 ## Wireframes
 
-![Alt text](images/YACHT%20WIREFRAMES.png)
+![Alt text](images/Updated%20Wire%20Frames.png)
 
 ## Entity Relationship Diagrams
 ![ERD](images/Screen%20Shot%202023-02-13%20at%208.48.02%20AM.png)
