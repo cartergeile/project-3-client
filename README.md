@@ -9,7 +9,7 @@ Software Engineers endure stressfull periods at work and demand unique travel ex
 ![Alt text](images/YACHT.jpeg)
 
 
-Frontend MERN stack app that consumes our boats API. 
+Frontend MERN stack app that consumes our trips API. 
 
 https://github.com/isobelmorales/project-3-api
 
@@ -34,21 +34,21 @@ https://github.com/isobelmorales/project-3-api
 
 ```
 As a user, I want the ability to: 
-
-
 - sign up for an account.
 - sign in to my account.
 - sign out of my account.
 - change my password.
-- create a new boat.
-- view all boats. 
-- view a boat's name, location, type, and picture.
-- view the weather in a boat's location.
-- update a boat.
-- delete a boat I have created. 
-- post a review to a boat.
-- delete reviews I have made.
-- view a boat's reviews. 
+- create a new trip.
+- view all trips. 
+- view a trip's location, start date, and end date.
+- update a trip I have created.
+- delete a trip I have created. 
+- post a boat to a trip.
+- view a boat's name, captain, passenger capacity, length, city, amd image.
+- view whether pets are allowed on the boat.
+- view the weather in the boat's city during the trip.
+- delete boats I have made.
+- view a trip's boats. 
 ```
 
 ## Wireframes
