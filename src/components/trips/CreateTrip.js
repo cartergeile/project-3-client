@@ -6,9 +6,9 @@ import { useNavigate } from 'react-router-dom'
 
 const CreateTrip = (props) => {
   const { user, msgAlert } = props
-  const naviagte = useNavigate()
+  const navigate = useNavigate()
 
   const [trip, setTrip] = useState({
-    
+
   })
 }
