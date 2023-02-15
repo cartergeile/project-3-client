@@ -22,7 +22,7 @@ const SignIn = (props) => {
     const navigate = useNavigate()
 
 	// handleChange = (event) =>
-	// 	this.setState({
+	// 	this.setState({Lurr
 	// 		[event.target.name]: event.target.value,
 	// 	})
 
