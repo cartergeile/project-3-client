@@ -4,6 +4,7 @@ const Home = (props) => {
 
 	return (
 		<>
+		<div className="splashPic"></div>
 			<h2>Home Page</h2>
 		</>
 	)

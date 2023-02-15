@@ -19,3 +19,9 @@ code {
 .right-aligned {
   justify-content: flex-end;
 }
+
+.splashPic {
+  height: 90vh;
+  background: url(https://i.imgur.com/4XBiAmh.jpg) no-repeat center  ;
+  background-size: cover;
+}
