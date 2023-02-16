@@ -1,3 +1,7 @@
+import React from 'react'
+import Slider from './shared/Slider'
+import Footer from './shared/Footer'
+
 const Home = (props) => {
 	// const { msgAlert, user } = props
 	console.log('props in home', props)
@@ -28,6 +32,9 @@ const Home = (props) => {
 			<div className="review">
 			Review
 			</div>
+			<Slider />
+
+			<Footer/>
 		</div>
 		</>
 		
