@@ -9,6 +9,9 @@ const messages = {
 	changePasswordFailure:'Failed to change passwords. Check your old password and try again.',
 	createReviewSuccess: 'Your review has been added.',
     createReviewFailure: 'Something went wrong. Please try again.',
+    getTripsFailure: 'Unable to retrieve this trip. Please try again.',
+    removeTripSuccess: 'This trip has been deleted.',
+    removeTripFailure: 'Unable to delete this trip. Please try again.',
 }
 
 module.exports = messages

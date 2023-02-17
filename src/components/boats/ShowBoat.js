@@ -37,6 +37,7 @@ const ShowBoat = (props) => {
                     variant: 'danger'
                 })
             })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [updated])
 
     // remove boat
@@ -101,13 +102,16 @@ const ShowBoat = (props) => {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <Button
-                            className="m-2"
-                            variant="info"
-                            onClick={() => setReviewModalShow(true)}
+                        <div className="d-grid gap-2">
+                            <Button
+                                className="m-2"
+                                variant="dark"
+                                size="lg"
+                                onClick={() => setReviewModalShow(true)}
                             >
                                 WRITE A REVIEW
                             </Button>
+                        </div>
                         {
                             boat.owner && user && boat.owner._id === user._id
                             ?
@@ -144,7 +148,6 @@ const ShowBoat = (props) => {
                 boat={boat}
             />
            <NewReviewModal
-                user={user}
                 boat={boat}
                 show={reviewModalShow}
                 handleClose={() => setReviewModalShow(false)}

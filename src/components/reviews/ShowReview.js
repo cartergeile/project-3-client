@@ -37,7 +37,7 @@ const ShowReview = (props) => {
                 <Card.Footer>
                     <small>{review.createdAt}</small><br />
                     {
-                        user && user._id === review.author._id
+                        user && review.author && user._id === review.author._id
                         ?
                         <>
                             <Button
