@@ -9,7 +9,7 @@ const Home = (props) => {
 
 	return (
 		<>
-		
+		<Slider />
 		<div className="splashPic">
 			
 			
