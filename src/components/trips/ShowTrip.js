@@ -6,7 +6,7 @@ import { getTripsFailure, removeTripFailure, removeTripSuccess } from '../shared
 import LoadingScreen from '../shared/LoadingScreen'
 import EditTripModal from './EditTripModal'
 import ShowBoat from '../boats/ShowBoat'
-import CreateBoat from '../boats/createBoat'
+import NewBoatModal from '../boats/NewBoatModal'
 
 const boatCardContainerLayout = {
     display: 'flex',
@@ -135,7 +135,7 @@ const ShowTrip = (props) => {
                 triggerRefresh={() => setUpdated(prev => !prev)}
                 trip={trip}
             />
-            <CreateBoat
+            <NewBoatModal
                 trip={trip}
                 show={boatModalShow}
                 handleClose={() => setBoatModalShow(false)}
