@@ -5,12 +5,19 @@ import { getOneBoat, removeBoat, updateBoat } from '../../api/boats'
 import messages from '../shared/AutoDismissAlert/messages'
 import LoadingScreen from '../shared/LoadingScreen'
 import EditBoatModal from './EditBoatModal'
+import ShowReview from '../reviews/ShowReview'
+import NewReviewModal from '../reviews/NewReviewModal'
 
-
+const reviewCardContainerLayout = {
+    display: 'flex',
+    justifyContent: 'center',
+    flexFlow: 'row wrap'
+}
 
 const ShowBoat = (props) => {
     const [boat, setBoat] = useState(null)
     const [editModalShow, setEditModalShow] = useState(false)
+    const [reviewModalShow, setReviewModalShow] = useState(false)
     const [updated, setUpdated] = useState(false)
 
     const { id } = useParams()
@@ -54,6 +61,21 @@ const ShowBoat = (props) => {
             })
     }
 
+    let reviewCards
+    if (boat) {
+        if (boat.reviews.length > 0) {
+            reviewCards = boat.reviews.map(review => (
+                <ShowReview
+                    key={review.id}
+                    review={review}
+                    user={user}
+                    boat={boat}
+                    msgAlert={msgAlert}
+                    triggerRefresh={() => setUpdated(prev => !prev)}
+                />
+            ))
+        }
+    }
 
     if(!boat) {
         return <LoadingScreen />
@@ -79,7 +101,13 @@ const ShowBoat = (props) => {
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        
+                        <Button
+                            className="m-2"
+                            variant="info"
+                            onClick={() => setReviewModalShow(true)}
+                            >
+                                WRITE A REVIEW
+                            </Button>
                         {
                             boat.owner && user && boat.owner._id === user._id
                             ?
@@ -103,7 +131,9 @@ const ShowBoat = (props) => {
                     </Card.Footer>
                 </Card>
             </Container>
-           
+           <Container className="m-2"> style={reviewCardContainerLayout}
+                {reviewCards}
+           </Container>
             <EditBoatModal 
                 user={user}
                 show={editModalShow}
@@ -113,7 +143,14 @@ const ShowBoat = (props) => {
                 triggerRefresh={() => setUpdated(prev => !prev)}
                 boat={boat}
             />
-           
+           <NewReviewModal
+                user={user}
+                boat={boat}
+                show={reviewModalShow}
+                handleClose={() => setReviewModalShow(false)}
+                msgAlert={msgAlert}
+                triggerRefresh={() => setUpdated(prev => !prev)}
+            />
         </>
     )
 }
