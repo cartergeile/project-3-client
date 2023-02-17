@@ -40,7 +40,7 @@ const Home = (props) => {
 		
 		
 	)
-
+/
 	
 }
 
