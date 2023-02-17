@@ -29,8 +29,9 @@ code {
 .review {
   padding: 20px;
   height: 100px;
-  opacity: 100%;
-  background-color: transparent !important;
+  opacity: 50%;
+  color: rgb(246, 244, 244);
+  background-color: gray !important;
  
 }
 
@@ -40,4 +41,23 @@ code {
   position: sticky !important;
   top: 0;
 }
+
+.section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.main-heading {
+  color: rgb(70, 203, 179);
+  font-size: 25px;
+}
+
+.underline {
+  height: 5px;
+  width: 4rem;
+  background-color: blue;
+
+}
+
+
 
