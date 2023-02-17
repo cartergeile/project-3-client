@@ -5,8 +5,9 @@ import ReviewForm from '../shared/ReviewForm'
 
 
 const NewReviewModal = (props) => {
-    const { user, boat, show, handleClose, msgAlert, triggerRefresh } = props
+    const { boat, show, handleClose, msgAlert, triggerRefresh } = props
 
+    // eslint-disable-next-line no-undef
     const [review, setReview] = useState({})
 
     const onChange = (e) => {

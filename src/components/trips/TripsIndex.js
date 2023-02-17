@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 import { getAllTrips } from '../../api/trips'
 
 // need our messages from our autodismissalert directory
-import messages from '../shared/AutoDismissAlert/messages'
+import { getTripsFailure } from '../shared/AutoDismissAlert/messages'
+import LoadingScreen from '../shared/LoadingScreen'
 
 // this is a styling object. they're a quick easy way add focused css properties to our react components
 // styling objects use any CSS style, but in camelCase instead of the typical hyphenated naming convention
@@ -32,11 +33,12 @@ const TripsIndex = (props) => {
             .catch(err => {
                 msgAlert({
                     heading: 'Error getting pets',
-                    message: 'Something went wrong, please try again',
+                    message: getTripsFailure,
                     variant: 'danger'
                 })
                 setError(true)
             })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     // if error, display an error
@@ -46,7 +48,7 @@ const TripsIndex = (props) => {
 
     if (!trips) {
         // if no trips loaded yet, display 'loading'
-        return <p>Loading...</p>
+        return <LoadingScreen />
     } else if (trips.length === 0) {
         // otherwise if there ARE no trips, display that message
         return <p>No trips yet, go add some!</p>

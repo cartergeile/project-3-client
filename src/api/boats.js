@@ -2,22 +2,19 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-// READ -> Index
-export const getAllBoats = () => {
-    return axios(`${apiUrl}/boats`)
-}
-
-// READ -> Show
-export const getOneBoat = (id) => {
-    return axios(`${apiUrl}/boats/${id}`)
+// READ -> Show one boat
+// GET /boats/:tripId/:boatId
+export const getOneBoat = (tripId, boatId) => {
+    return axios(`${apiUrl}/boats/${tripId}/${boatId}`)
 }
 
 // Create (create boat)
-export const createBoat = (user, newBoat) => {
+// POST /boats/:tripId
+export const createBoat = (user, tripId, newBoat) => {
     console.log('this is the user', user)
     console.log('this is the newBoat', newBoat)
     return axios({
-        url: `${apiUrl}/boats`,
+        url: `${apiUrl}/boats/${tripId}`,
         method: 'POST',
         headers: {
             Authorization: `Token token=${user.token}`
@@ -27,9 +24,10 @@ export const createBoat = (user, newBoat) => {
 }
 
 // Update (update boat)
-export const updateBoat = (user, updatedBoat) => {
+// PATCH /boats/:tripId/:boatId
+export const updateBoat = (user, tripId, updatedBoat) => {
     return axios({
-        url: `${apiUrl}/boats/${updatedBoat.id}`,
+        url: `${apiUrl}/boats/${tripId}/${updatedBoat.id}`,
         method: 'PATCH',
         headers: {
             Authorization: `Token token=${user.token}`
@@ -39,9 +37,10 @@ export const updateBoat = (user, updatedBoat) => {
 }
 
 // Delete (delete boat)
-export const removeBoat = (user, boatId) => {
+// DELETE /boats/:tripId/:boatId
+export const removeBoat = (user, tripId, boatId) => {
     return axios({
-        url: `${apiUrl}/boats/${boatId}`,
+        url: `${apiUrl}/boats/${tripId}/${boatId}`,
         method: 'DELETE',
         headers: {
             Authorization: `Token token=${user.token}`

@@ -2,18 +2,18 @@
 
 Aaron Humphres, Carter Geile, and Isobel Morales
 
-## Overview 
+## Overview
 
 Software Engineers endure stressfull periods at work and demand unique travel experiences. This app allows them to search and reserve an experience around the globe in a yacht.
 
 ![Alt text](images/YACHT.jpeg)
 
+Frontend MERN stack app that consumes our trips API.
 
-Frontend MERN stack app that consumes our trips API. 
-
-https://github.com/isobelmorales/project-3-api
+<https://github.com/isobelmorales/project-3-api>
 
 ### Technologies Used
+
 - MongoDB
 - Mongoose
 - Express
@@ -30,9 +30,9 @@ https://github.com/isobelmorales/project-3-api
 
 ## Installation Instructions
 
-## User Stories 
+## User Stories
 
-```
+```txt
 As a user, I want the ability to: 
 - sign up for an account.
 - sign in to my account.
@@ -56,6 +56,7 @@ As a user, I want the ability to:
 ![Alt text](images/Updated%20Wire%20Frames.png)
 
 ## Entity Relationship Diagrams
+
 ![ERD](images/newesterd.png)
 
-## Unsolved Problems / Major Hurdles 
+## Unsolved Problems / Major Hurdles
