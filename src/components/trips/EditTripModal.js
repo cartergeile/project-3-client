@@ -18,6 +18,10 @@ const EditTripModal = (props) => {
             const updatedName = e.target.name
             let updatedValue = e.target.value
 
+            const updatedTrip = {
+                [updatedName] : updatedValue
+            }
+
             return {
                 ...prevTrip, ...updatedTrip
             }
