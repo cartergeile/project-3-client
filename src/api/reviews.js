@@ -26,7 +26,7 @@ export const updateReview = (user, tripId, boatId, updatedReview) => {
 
 // DELETE
 // DELETE /reviews/:tripId/:boatId/:reviewId
-export const deleteActor = (user, tripId, boatId, reviewId) => {
+export const deleteReview = (user, tripId, boatId, reviewId) => {
     return axios({
         url: `${apiUrl}/reviews/${tripId}/${boatId}/${reviewId}`,
         method: 'DELETE',

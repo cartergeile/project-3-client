@@ -7,7 +7,8 @@ const messages = {
 	getBoatsFailure: 'Failed to load boats',
 	changePasswordSuccess: 'Password changed successfully!',
 	changePasswordFailure:'Failed to change passwords. Check your old password and try again.',
-	
+	createReviewSuccess: 'Your review has been added.',
+    createReviewFailure: 'Something went wrong. Please try again.',
 }
 
 module.exports = messages
