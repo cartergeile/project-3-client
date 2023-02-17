@@ -5,8 +5,13 @@ import { getOneBoat, removeBoat, updateBoat } from '../../api/boats'
 import messages from '../shared/AutoDismissAlert/messages'
 import LoadingScreen from '../shared/LoadingScreen'
 import EditBoatModal from './EditBoatModal'
+import ShowReview from '../reviews/ShowReview'
 
-
+const reviewCardContainerLayout = {
+    display: 'flex',
+    justifyContent: 'center',
+    flexFlow: 'row wrap'
+}
 
 const ShowBoat = (props) => {
     const [boat, setBoat] = useState(null)
@@ -54,6 +59,17 @@ const ShowBoat = (props) => {
             })
     }
 
+    let reviewCards
+    if (boat) {
+        if (boat.reviews.length > 0) {
+            reviewCards = boat.reviews.map(review => (
+                <ShowReview
+                    key={review.id}
+                    review={review}
+                />
+            ))
+        }
+    }
 
     if(!boat) {
         return <LoadingScreen />
@@ -103,7 +119,9 @@ const ShowBoat = (props) => {
                     </Card.Footer>
                 </Card>
             </Container>
-           
+           <Container className="m-2"> style={reviewCardContainerLayout}
+                {reviewCards}
+           </Container>
             <EditBoatModal 
                 user={user}
                 show={editModalShow}
