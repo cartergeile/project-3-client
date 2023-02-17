@@ -26,6 +26,42 @@ code {
   background-size: cover;
 }
 
+.splashPicMed{
+  height: 90vh;
+  background: url(https://i.imgur.com/MqwryZs.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.splashPicAnt{
+  height: 90vh;
+  background: url(https://i.imgur.com/8GNl1k2.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.splashPicCar{
+  height: 90vh;
+  background: url(https://i.imgur.com/8GNl1k2.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.splashPicInd{
+  height: 90vh;
+  background: url(https://i.imgur.com/8GNl1k2.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.splashPicFar{
+  height: 90vh;
+  background: url(https://i.imgur.com/8GNl1k2.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.splashPicMis{
+  height: 90vh;
+  background: url(https://i.imgur.com/8GNl1k2.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
 .review {
   padding: 20px;
   height: 100px;
