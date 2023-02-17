@@ -2,7 +2,6 @@
 import React, { useState, Fragment } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
-import GridLoader from 'react-spinners/ClipLoader'
 
 
 
@@ -15,6 +14,9 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import CreateTrip from './components/trips/CreateTrip'
+import TripsIndex from './components/trips/TripsIndex'
+import ShowTrip from './components/trips/ShowTrip'
 
 const App = () => {
 
@@ -70,6 +72,31 @@ const App = () => {
                         <RequireAuth user={user}>
                             <ChangePassword msgAlert={msgAlert} user={user} />
                         </RequireAuth>}
+                    />
+                    <Route
+                        path='/create-trip'
+                        element={
+                            <RequireAuth user={user}>
+                                <CreateTrip msgAlert={msgAlert} user={user} />
+                            </RequireAuth>
+                        }
+                    />
+                    <Route
+                        path='/trips'
+                        element={
+                            <TripsIndex 
+                                msgAlert={msgAlert}
+                            />
+                        }
+                    />
+                    <Route
+                        path='/trips/:id'
+                        element={
+                            <ShowTrip
+                                msgAlert={msgAlert}
+                                user={user}
+                            />
+                        }
                     />
 				</Routes>
 				{msgAlerts.map((msgAlert) => (
