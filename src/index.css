@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bg-myBlue {
+  background-color: rgb(58, 139, 238)
+}
+
+.right-aligned {
+  justify-content: flex-end;
+}
+
+.splashPic {
+  height: 90vh;
+  background: url(https://i.imgur.com/4XBiAmh.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.review {
+  padding: 20px;
+  height: 100px;
+  opacity: 100%;
+  background-color: transparent !important;
+ 
+}
+
+
+.sticky-nav {
+  position: -webkit-sticky;
+  position: sticky !important;
+  top: 0;
+}
+

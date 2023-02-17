@@ -4,6 +4,8 @@ import { Route, Routes } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 import GridLoader from 'react-spinners/ClipLoader'
 
+
+
 // import AuthenticatedRoute from './components/shared/AuthenticatedRoute'
 import AutoDismissAlert from './components/shared/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/shared/Header'
