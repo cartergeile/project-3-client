@@ -10,37 +10,46 @@ const MedHome = (props) => {
 	return (
 		<>
 		
-		<div className="splashPicMed">
-            
-            	
-			
-			
-		
+		<div className="splashPicMed" />
 
+		<div className='boats'>
 			
+		<h4> Impromptu </h4>
+		<div>
+		<img src='https://i.imgur.com/RNxsirYm.jpg'/>
+		<Link to=''> Book this boat</Link>
 		</div>
 
-<div className='review'>
+
+		</div>
+		<hr/>
+		<div className='boats'>
+			
+			<h4> Optasia </h4>
+			<div>
+			<img src='https://i.imgur.com/AZgvViAt.jpg'/>
+			<Link to=''> Book this boat</Link>
+			</div>
+	
+	
+			</div>
+		<hr/>
+		<div className='boats'>
+			
+		<h4> Kingsman </h4>
+		<div>
+		<img src='https://i.imgur.com/gpQ2ovqt.jpg'/>
+		<Link to=''> Book this boat</Link>
+		</div>
 
 
-</div>
-<hr/>
-
-<div className='review'>
-
-
-</div>
-<hr/>
-<div className='review'>
-
-
-</div>
+		</div>
 
 
 
-<Footer/>
-
-</>
+		<Footer/>
+		
+		</>
 
 
 )

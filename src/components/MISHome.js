@@ -9,38 +9,27 @@ const MisHome = (props) => {
 
 	return (
 		<>
-		
-		<div className="splashPicMis">
+		<div className="splashPicMis"></div>
+        <div className='boats'>
+			
+            <h4> Huck Finn Experience </h4>
+            <div>
+            <img src='https://i.imgur.com/jqkOCKa.jpg'/>
+            <Link to=''> Book this raft</Link>
+            </div>
+    
+    
+            </div>
+            <hr/>
+    
+           
             
-            	
-			
-			
-		
-
-			
-		</div>
-
-<div className='review'>
-
-
-</div>
-<hr/>
-
-<div className='review'>
-
-
-</div>
-<hr/>
-<div className='review'>
-
-
-</div>
-
-
-
-<Footer/>
-
-</>
+    
+    
+    
+            <Footer/>
+            
+            </>
 
 
 )

@@ -11,7 +11,7 @@ const IndHome = (props) => {
 	return (
 		<>
 		
-		<div className="splashPicAnt">
+		<div className="splashPicInd">
             
             	
 			
@@ -21,21 +21,17 @@ const IndHome = (props) => {
 			
 		</div>
 
-<div className='review'>
+        <div className='boats'>
+			
+			<h4> Enchanted Lady </h4>
+			<div>
+			<img src='https://i.imgur.com/JwIGdYM.jpg'/>
+			<Link to=''> Book this boat</Link>
+			</div>
+	
+	
+			</div>
 
-
-</div>
-<hr/>
-
-<div className='review'>
-
-
-</div>
-<hr/>
-<div className='review'>
-
-
-</div>
 
 
 

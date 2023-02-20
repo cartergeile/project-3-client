@@ -32,6 +32,33 @@ const authenticatedOptions = (
 				Sign Out
 			</Link>
 		</Nav.Item>
+
+		<NavDropdown title='Destinations' id='basic-nav-dropdown'>
+			<NavDropdown.Item className='m-2'>
+				<Link to='AntHome'> Antarctica</Link>
+			</NavDropdown.Item>
+			<NavDropdown.Item className='m-2'>
+				<Link to='CarrHome'> Caribbean</Link>
+			</NavDropdown.Item>
+			<NavDropdown.Item className='m-2'>
+				<Link to='FarHome'> Far East</Link>
+			</NavDropdown.Item>
+			<NavDropdown.Item className='m-2'>
+				<Link to='IndHome'> Indian Ocean</Link>
+			</NavDropdown.Item>
+			<NavDropdown.Item className='m-2'>
+				<Link to='MedHome'> Mediterranean</Link>
+			</NavDropdown.Item>
+			<NavDropdown.Item className='m-2'>
+				<Link to='MisHome'> Mississippi River</Link>
+			</NavDropdown.Item>
+
+			<hr />
+			<NavDropdown.Item className='m-2'>
+				<Link to='sign-out'> Sign Out</Link>
+			</NavDropdown.Item>
+
+		</NavDropdown>
 	</>
 )
 
@@ -88,7 +115,10 @@ const Header = ({ user }) => (
 			</Nav>
 		</Navbar.Collapse>
 	</Navbar>
+
 	
 )
+
+
 
 export default Header

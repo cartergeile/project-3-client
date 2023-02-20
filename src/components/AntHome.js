@@ -3,6 +3,7 @@ import Slider from './shared/Slider'
 import Footer from './shared/Footer'
 import {Link} from 'react-router-dom'
 
+
 const AntHome = (props) => {
 	// const { msgAlert, user } = props
 	console.log('props in home', props)
@@ -11,30 +12,20 @@ const AntHome = (props) => {
 		<>
 		
 		<div className="splashPicAnt">
-            
-            	
-			
-			
-		
-
-			
+  		
 		</div>
 
-<div className='review'>
+		<div className='boats'>
+			
+			<h4> Solace </h4>
+			<div>
+			<img src='https://i.imgur.com/BWyR3Cyt.jpg'/>
+			<Link to=''> Book this boat</Link>
+			</div>
+	
+	
+			</div>
 
-
-</div>
-<hr/>
-
-<div className='review'>
-
-
-</div>
-<hr/>
-<div className='review'>
-
-
-</div>
 
 
 

@@ -20,18 +20,19 @@ const FarHome = (props) => {
 			
 		</div>
 
-<div className='review'>
-
-
-</div>
+        <div className='boats'>
+			
+            <h4> Calypso </h4>
+            <div>
+            <img src='https://i.imgur.com/GuCXXQYt.jpg'/>
+            <Link to=''> Book this boat</Link>
+            </div>
+    
+    
+            </div>
 <hr/>
 
-<div className='review'>
-
-
-</div>
-<hr/>
-<div className='review'>
+<div className='boats'>
 
 
 </div>

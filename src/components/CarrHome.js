@@ -12,37 +12,46 @@ const CarHome = (props) => {
 	return (
 		<>
 		
-		<div className="splashPicCar">
-            
-            	
-			
-			
-		
+		<div className="splashPicCar" />
 
+		<div className='boats'>
 			
+		<h4> Hyperion </h4>
+		<div>
+		<img src='https://i.imgur.com/SCXtMBKm.jpg'/>
+		<Link to=''> Book this boat</Link>
 		</div>
 
-<div className='review'>
+
+		</div>
+		<hr/>
+		<div className='boats'>
+			
+			<h4> My Song </h4>
+			<div>
+			<img src='https://i.imgur.com/7fUrib8t.jpg'/>
+			<Link to=''> Book this boat</Link>
+			</div>
+	
+	
+			</div>
+		<hr/>
+		<div className='boats'>
+			
+		<h4> Hyperion </h4>
+		<div>
+		<img src='https://i.imgur.com/4XBiAmhm.jpg'/>
+		<Link to=''> Book this boat</Link>
+		</div>
 
 
-</div>
-<hr/>
-
-<div className='review'>
-
-
-</div>
-<hr/>
-<div className='review'>
-
-
-</div>
+		</div>
 
 
 
-<Footer/>
-
-</>
+		<Footer/>
+		
+		</>
 
 
 )
