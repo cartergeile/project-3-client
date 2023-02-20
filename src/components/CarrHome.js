@@ -3,16 +3,18 @@ import Slider from './shared/Slider'
 import Footer from './shared/Footer'
 import {Link} from 'react-router-dom'
 
-const Home = (props) => {
+
+
+const CarHome = (props) => {
 	// const { msgAlert, user } = props
 	console.log('props in home', props)
 
 	return (
 		<>
 		
-		<div className="splashPic">
-			
-		
+		<div className="splashPicCar">
+            
+            	
 			
 			
 		
@@ -20,37 +22,31 @@ const Home = (props) => {
 			
 		</div>
 
-		<div className='review'>
+<div className='review'>
 
 
-		</div>
-		<hr/>
+</div>
+<hr/>
 
-		<div className='review'>
-
-
-		</div>
-		<hr/>
-		<div className='review'>
+<div className='review'>
 
 
-		</div>
+</div>
+<hr/>
+<div className='review'>
 
 
-
-		<Footer/>
-		
-		</>
-		
-		
-	)
-	
+</div>
 
 
 
+<Footer/>
+
+</>
 
 
+)
 
 }
 
-export default Home
+export default CarHome
