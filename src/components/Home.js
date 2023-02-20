@@ -9,8 +9,8 @@ const Home = (props) => {
 
 	return (
 		<>
-		
-		<div className="splashPic">
+		<Slider />
+		<div className="splashPic" />
 			
 		
 			
@@ -18,7 +18,7 @@ const Home = (props) => {
 		
 
 			
-		</div>
+		
 
 		<div className='review'>
 
