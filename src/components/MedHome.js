@@ -1,5 +1,5 @@
 import React from 'react'
-import Slider from './shared/Slider'
+
 import Footer from './shared/Footer'
 import {Link} from 'react-router-dom'
 
@@ -16,7 +16,7 @@ const MedHome = (props) => {
 			
 		<h4> Impromptu </h4>
 		<div>
-		<img src='https://i.imgur.com/RNxsirYm.jpg'/>
+		<img src='https://i.imgur.com/RNxsirYm.jpg' alt=''/>
 		<Link to=''> Book this boat</Link>
 		</div>
 
@@ -27,7 +27,7 @@ const MedHome = (props) => {
 			
 			<h4> Optasia </h4>
 			<div>
-			<img src='https://i.imgur.com/AZgvViAt.jpg'/>
+			<img src='https://i.imgur.com/AZgvViAt.jpg' alt=''/>
 			<Link to=''> Book this boat</Link>
 			</div>
 	
@@ -38,7 +38,7 @@ const MedHome = (props) => {
 			
 		<h4> Kingsman </h4>
 		<div>
-		<img src='https://i.imgur.com/gpQ2ovqt.jpg'/>
+		<img src='https://i.imgur.com/gpQ2ovqt.jpg' alt=''/>
 		<Link to=''> Book this boat</Link>
 		</div>
 

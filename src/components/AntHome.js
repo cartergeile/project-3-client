@@ -1,5 +1,5 @@
 import React from 'react'
-import Slider from './shared/Slider'
+
 import Footer from './shared/Footer'
 import {Link} from 'react-router-dom'
 
@@ -19,7 +19,7 @@ const AntHome = (props) => {
 			
 			<h4> Solace </h4>
 			<div>
-			<img src='https://i.imgur.com/BWyR3Cyt.jpg'/>
+			<img src='https://i.imgur.com/BWyR3Cyt.jpg' alt=''/>
 			<Link to=''> Book this boat</Link>
 			</div>
 	

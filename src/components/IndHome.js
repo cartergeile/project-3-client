@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Slider from './shared/Slider'
+
 import Footer from './shared/Footer'
 import {Link} from 'react-router-dom'
 
@@ -25,7 +25,7 @@ const IndHome = (props) => {
 			
 			<h4> Enchanted Lady </h4>
 			<div>
-			<img src='https://i.imgur.com/JwIGdYM.jpg'/>
+			<img src='https://i.imgur.com/JwIGdYM.jpg' alt=''/>
 			<Link to=''> Book this boat</Link>
 			</div>
 	

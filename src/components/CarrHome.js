@@ -1,5 +1,5 @@
 import React from 'react'
-import Slider from './shared/Slider'
+
 import Footer from './shared/Footer'
 import {Link} from 'react-router-dom'
 
@@ -18,7 +18,7 @@ const CarHome = (props) => {
 			
 		<h4> Hyperion </h4>
 		<div>
-		<img src='https://i.imgur.com/SCXtMBKm.jpg'/>
+		<img src='https://i.imgur.com/SCXtMBKm.jpg' alt=''/>
 		<Link to=''> Book this boat</Link>
 		</div>
 
@@ -29,7 +29,7 @@ const CarHome = (props) => {
 			
 			<h4> My Song </h4>
 			<div>
-			<img src='https://i.imgur.com/7fUrib8t.jpg'/>
+			<img src='https://i.imgur.com/7fUrib8t.jpg' alt=''/>
 			<Link to=''> Book this boat</Link>
 			</div>
 	
@@ -40,7 +40,7 @@ const CarHome = (props) => {
 			
 		<h4> Hyperion </h4>
 		<div>
-		<img src='https://i.imgur.com/4XBiAmhm.jpg'/>
+		<img src='https://i.imgur.com/4XBiAmhm.jpg' alt=''/>
 		<Link to=''> Book this boat</Link>
 		</div>
 
