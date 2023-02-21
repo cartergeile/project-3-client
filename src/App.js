@@ -18,6 +18,7 @@ import ChangePassword from './components/auth/ChangePassword'
 import CreateTrip from './components/trips/CreateTrip'
 import TripsIndex from './components/trips/TripsIndex'
 import ShowTrip from './components/trips/ShowTrip'
+import ShowBoat from './components/boats/ShowBoat'
 
 const App = () => {
 
@@ -94,6 +95,15 @@ const App = () => {
                     path='trips/:id'
                     element={
                         <ShowTrip
+                            msgAlert={msgAlert}
+                            user={user}
+                        />
+                    }
+                />
+                <Route
+                    path='boats/:tripId/:boatId'
+                    element={
+                        <ShowBoat
                             msgAlert={msgAlert}
                             user={user}
                         />

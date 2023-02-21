@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { Container, Card, Button } from 'react-bootstrap'
+import { Container, Button, Row, Col, Breadcrumb } from 'react-bootstrap'
 import { getOneBoat, removeBoat, updateBoat } from '../../api/boats'
 import messages from '../shared/AutoDismissAlert/messages'
 import LoadingScreen from '../shared/LoadingScreen'
 import EditBoatModal from './EditBoatModal'
 import ShowReview from '../reviews/ShowReview'
 import NewReviewModal from '../reviews/NewReviewModal'
+import { getOneTrip } from '../../api/trips'
 
 const reviewCardContainerLayout = {
     display: 'flex',
@@ -15,21 +16,44 @@ const reviewCardContainerLayout = {
 }
 
 const ShowBoat = (props) => {
+    const { user, msgAlert } = props
+    const { tripId, boatId } = useParams()
+    const navigate = useNavigate()
+
+    const [trip, setTrip] = useState(null)
     const [boat, setBoat] = useState(null)
     const [editModalShow, setEditModalShow] = useState(false)
     const [reviewModalShow, setReviewModalShow] = useState(false)
     const [updated, setUpdated] = useState(false)
 
-    const { id } = useParams()
-    const navigate = useNavigate()
-
-    const { user, msgAlert } = props
     console.log('user in ShowBoat props', user)
     console.log('msgAlert in ShowBoat props', msgAlert)
+    console.log('trip in ShowBoat props', trip)
+    console.log('boat in showboat', boat)
+    console.log('tripId', tripId)
+    console.log('boatId', boatId)
+    console.log('get one boat', getOneBoat(user, tripId, boatId))
+
+    useEffect(() => {getOneTrip(tripId)
+        .then(res => {
+            console.log('trip res data', res.data)
+            setTrip(res.data.trip)
+        })
+        .catch(err => {
+            msgAlert({
+                heading: 'Error',
+                message: 'Could not lookup trip',
+                variant: 'danger'
+            })
+        })
+})
 
     useEffect(() => {
-        getOneBoat(id)
-            .then(res => setBoat(res.data.boat))
+        getOneBoat(user, tripId, boatId)
+            .then(res => {
+                console.log('boat res data', res.data)
+                setBoat(res.data.boat)
+            })
             .catch(err => {
                 msgAlert({
                     heading: 'Error getting boats',
@@ -37,12 +61,11 @@ const ShowBoat = (props) => {
                     variant: 'danger'
                 })
             })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [updated])
 
     // remove boat
     const deleteBoat = () => {
-        removeBoat(user, boat.id)
+        removeBoat(user, tripId, boatId)
             //success
             .then(() => {
                 msgAlert({
@@ -51,7 +74,7 @@ const ShowBoat = (props) => {
                     variant: 'success'
                 })
             })
-            .then(() => {navigate('/')})
+            .then(() => {navigate(`/trips/${tripId}`)})
             // failure
             .catch(err => {
                 msgAlert({
@@ -71,6 +94,7 @@ const ShowBoat = (props) => {
                     review={review}
                     user={user}
                     boat={boat}
+                    trip={trip}
                     msgAlert={msgAlert}
                     triggerRefresh={() => setUpdated(prev => !prev)}
                 />
@@ -82,62 +106,70 @@ const ShowBoat = (props) => {
         return <LoadingScreen />
     }
 
+    
+
     return (
         <>
-            <Container className="m-2">
-                <Card>
-                    <Card.Header>{ boat.name }</Card.Header>
-                    <Card.Body>
-                        <Card.Text>
-                            <div><small></small></div>
-                            <div><small></small></div>
-                            <div><small></small></div>
-                            <div><small></small></div>
-                            <div>
-                                <small>
-                                    Pets Allowed?: { boat.petsAllowed ? 'yes' : 'no' }
-                                </small>
-                            </div>
-                            <div><small></small></div>
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <div className="d-grid gap-2">
-                            <Button
-                                className="m-2"
-                                variant="dark"
-                                size="lg"
-                                onClick={() => setReviewModalShow(true)}
-                            >
-                                WRITE A REVIEW
-                            </Button>
-                        </div>
-                        {
-                            boat.owner && user && boat.owner._id === user._id
-                            ?
-                            <>
-                                <Button 
-                                    className="m-2" variant="warning"
-                                    onClick={() => setEditModalShow(true)}
-                                >
-                                    Edit {boat.name}
-                                </Button>
-                                <Button 
-                                    className="m-2" variant="danger"
-                                    onClick={() => deleteBoat()}
-                                >
-                                    Set {boat.name} Free
-                                </Button>
-                            </>
-                            :
-                            null
-                        }
-                    </Card.Footer>
-                </Card>
+            <Breadcrumb>
+                <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+                <Breadcrumb.Item href="/trips">
+                    Trips
+                </Breadcrumb.Item>
+                <Breadcrumb.Item active>{boat.name}</Breadcrumb.Item>
+            </Breadcrumb>
+            <Container>
+                <Row>
+                    <h1 className="text-center">{boat.name}</h1>
+                    <h2 className="text-center">Captain {boat.captain}</h2>
+                </Row>
+                <Row>
+                    <Col>
+                        <img src={boat.image} className="rounded float-md-start" alt="" style={{ width: '50rem' }}/>
+                    </Col>
+                    <Col>
+                        <h3 className="m-2">About this Boat</h3>
+                        <p className="m-2">Passengers: {boat.passengers}</p>
+                        <p className="m-2">{boat.length} ft.</p>
+                        <p className="m-2">{boat.petsAllowed ? 'Pet Friendly' : 'No Pets Allowed'}</p>
+                    </Col>
+                </Row>
             </Container>
-           <Container className="m-2"> style={reviewCardContainerLayout}
+            <div className="d-grid gap-2">
+                <Button
+                    className="m-2"
+                    variant="dark"
+                    size="lg"
+                    onClick={() => setReviewModalShow(true)}
+                >
+                    WRITE A REVIEW
+                </Button>
+            </div>
+            {
+                boat.owner && user && boat.owner.id === user.id
+                ?
+                <>
+                    <Button 
+                        className="m-2" variant="warning"
+                        onClick={() => setEditModalShow(true)}
+                    >
+                        Edit {boat.name}
+                    </Button>
+                    <Button 
+                        className="m-2" variant="danger"
+                        onClick={() => deleteBoat()}
+                    >
+                        Delete {boat.name}
+                    </Button>
+                </>
+                :
+                null
+            }
+            <Container 
+                className="m-2" 
+                style={reviewCardContainerLayout}
+            >
                 {reviewCards}
-           </Container>
+            </Container>
             <EditBoatModal 
                 user={user}
                 show={editModalShow}
@@ -146,9 +178,12 @@ const ShowBoat = (props) => {
                 msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated(prev => !prev)}
                 boat={boat}
+                tripId={tripId}
             />
-           <NewReviewModal
+            <NewReviewModal
                 boat={boat}
+                user={user}
+                trip={trip}
                 show={reviewModalShow}
                 handleClose={() => setReviewModalShow(false)}
                 msgAlert={msgAlert}

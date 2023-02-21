@@ -1,21 +1,25 @@
 import { Modal } from 'react-bootstrap'
+import { useState } from 'react'
 import { createReview } from '../../api/reviews'
 import { createReviewFailure, createReviewSuccess } from '../shared/AutoDismissAlert/messages'
 import ReviewForm from '../shared/ReviewForm'
 
 
 const NewReviewModal = (props) => {
-    const { boat, show, handleClose, msgAlert, triggerRefresh } = props
+    const { user, trip, boat, show, handleClose, msgAlert, triggerRefresh } = props
 
     // eslint-disable-next-line no-undef
     const [review, setReview] = useState({})
+
+    console.log('boat from new review props', boat)
+    console.log('trip from new reviewprops', trip)
 
     const onChange = (e) => {
         e.persist()
 
         setReview(prevReview => {
             const updatedName = e.target.name
-            const updatedValue = e.target.value
+            let updatedValue = e.target.value
 
             const updatedReview = {
                 [updatedName] : updatedValue
@@ -30,7 +34,7 @@ const NewReviewModal = (props) => {
 
     const onSubmit = (e) => {
         e.preventDefault()
-        createReview(boat.id, review)
+        createReview(user, trip.id, boat.id, review)
             .then(() => handleClose())
             .then(() => {
                 msgAlert({
@@ -54,10 +58,10 @@ const NewReviewModal = (props) => {
             <Modal.Header closeButton />
             <Modal.Body>
                 <ReviewForm
-                    boat={boat}
+                    review={review}
                     handleChange={onChange}
                     handleSubmit={onSubmit}
-                    heading={`Leave a review`}
+                    heading='New Review'
                 />
             </Modal.Body>
         </Modal>
