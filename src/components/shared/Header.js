@@ -71,15 +71,7 @@ const unauthenticatedOptions = (
 		    <Link to='sign-in' style={linkStyle}>Sign In</Link>
         </Nav.Item>
 
-		<NavDropdown title='Sign in' id='basic-nav-dropdown'>
-			<NavDropdown.Item className='m-2'>
-				<Link to='sign-in'> Sign In</Link>
-			</NavDropdown.Item>
-			<NavDropdown.Item className='m-2'>
-				<Link to='sign-up'> Sign up</Link>
-			</NavDropdown.Item>
-
-		</NavDropdown>
+	
 	</>
 )
 
