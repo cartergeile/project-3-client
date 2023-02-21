@@ -1,28 +1,23 @@
-
 import React from 'react'
-import {Button} from 'react-bootstrap'
+
 import Footer from './shared/Footer'
 import {Link} from 'react-router-dom'
 
-
-
-
-const Home = (props) => {
+const MedHome = (props) => {
 	// const { msgAlert, user } = props
 	console.log('props in home', props)
 
 	return (
 		<>
 		
-		<div className="splashPic" />
+		<div className="splashPicMed" />
 
 		<div className='boats'>
 			
-		<h4> Calypso </h4>
+		<h4> Impromptu </h4>
 		<div>
-		<img src='https://i.imgur.com/GuCXXQYt.jpg' alt=''/>
+		<img src='https://i.imgur.com/RNxsirYm.jpg' alt=''/>
 		<Link to=''> Book this boat</Link>
-		<p> Explore the beautiful city harbors along the coast of Taiwan and China.</p>
 		</div>
 
 
@@ -30,11 +25,10 @@ const Home = (props) => {
 		<hr/>
 		<div className='boats'>
 			
-			<h4> Enchanted Lady </h4>
+			<h4> Optasia </h4>
 			<div>
-			<img src='https://i.imgur.com/JwIGdYM.jpg' alt=''/>
+			<img src='https://i.imgur.com/AZgvViAt.jpg' alt=''/>
 			<Link to=''> Book this boat</Link>
-			<p> Dock in the sheltered bays of the Polynesian Islands.</p>
 			</div>
 	
 	
@@ -44,9 +38,8 @@ const Home = (props) => {
 			
 		<h4> Kingsman </h4>
 		<div>
-		<img src='https://i.imgur.com/RNxsirYm.jpg' alt=''/>
+		<img src='https://i.imgur.com/gpQ2ovqt.jpg' alt=''/>
 		<Link to=''> Book this boat</Link>
-		<p> Move gracefully through the Greek Isles.</p>
 		</div>
 
 
@@ -57,11 +50,10 @@ const Home = (props) => {
 		<Footer/>
 		
 		</>
-		
-		
-	)
-	
+
+
+)
 
 }
 
-export default Home
+export default MedHome

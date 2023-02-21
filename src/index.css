@@ -22,16 +22,53 @@ code {
 
 .splashPic {
   height: 90vh;
-  background: url(https://i.imgur.com/4XBiAmh.jpg) no-repeat center center fixed;
+  background: url(https://i.imgur.com/xgVZApD.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
-.review {
+.splashPicMed{
+  height: 90vh;
+  background: url(https://i.imgur.com/MqwryZs.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.splashPicAnt{
+  height: 90vh;
+  background: url(https://i.imgur.com/8GNl1k2.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.splashPicCar{
+  height: 90vh;
+  background: url(https://i.imgur.com/8GNl1k2.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.splashPicInd{
+  height: 90vh;
+  background: url(https://i.imgur.com/DbFtY2L.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.splashPicFar{
+  height: 90vh;
+  background: url(https://i.imgur.com/GuCXXQY.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.splashPicMis{
+  height: 90vh;
+  background: url(https://i.imgur.com/jqkOCKa.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.boats {
   padding: 20px;
-  height: 100px;
-  opacity: 50%;
+  height: 250px;
+  opacity: 80%;
   color: rgb(246, 244, 244);
   background-color: gray !important;
+  background: transparent
  
 }
 
@@ -58,6 +95,7 @@ code {
   background-color: blue;
 
 }
+
 
 
 
