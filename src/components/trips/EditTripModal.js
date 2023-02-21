@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { Modal } from 'react-bootstrap'
-import TripForm from '../shared/BoatForm'
+import TripForm from '../shared/TripForm'
 import messages from '../shared/AutoDismissAlert/messages'
 
 const EditTripModal = (props) => {
@@ -38,7 +38,7 @@ const EditTripModal = (props) => {
             .then(() => {
                 msgAlert({
                     heading: 'Trip added',
-                    message: 'You have successfully added this trip!',
+                    message: messages.updateTripSuccess,
                     variant: 'success'
                 })
             })
@@ -48,7 +48,7 @@ const EditTripModal = (props) => {
             .catch(() => {
                 msgAlert({
                     heading: 'Oh No!',
-                    message: 'Something went wrong, please try again',
+                    message: messages.updateTripFailure,
                     variant: 'danger'
                 })
             })
