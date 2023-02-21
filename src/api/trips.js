@@ -29,14 +29,14 @@ export const createTrip = (user, newTrip) => {
 // Update a trip
 // PATCH /trips/:tripId
 export const updateTrip = (user, updatedTrip) => {
-  return axios({
-    url: `${apiUrl}/trips/${updatedTrip.id}`,
-    method: 'PATCH',
-    headers: {
-      Authorization: `Token token=${user.token}`
-    },
-    data: { trip: updatedTrip }
-  })
+    return axios({
+        url: `${apiUrl}/trips/${updatedTrip.id}`,
+        method: 'PATCH',
+        headers: {
+            Authorization: `Token token=${user.token}`
+        },
+        data: { trip: updatedTrip }
+    })
 }
 
 // Delete a trip

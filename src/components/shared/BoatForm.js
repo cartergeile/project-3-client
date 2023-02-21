@@ -11,7 +11,7 @@ const BoatForm = (props) => {
                 <Form.Group className="m-2">
                     <Form.Label>Name:</Form.Label>
                     <Form.Control 
-                        placeholder=""
+                        placeholder="What is the boat's name?"
                         name="name"
                         id="name"
                         value={ boat.name }

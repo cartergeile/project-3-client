@@ -12,6 +12,8 @@ const messages = {
     getTripsFailure: 'Unable to retrieve this trip. Please try again.',
     removeTripSuccess: 'This trip has been deleted.',
     removeTripFailure: 'Unable to delete this trip. Please try again.',
+    updateTripSuccess: 'Trip has been updated!',
+    updatedTripFailure: 'Failed to updated Trip. Please try again.',
 }
 
 module.exports = messages
