@@ -15,20 +15,21 @@ const reviewCardContainerLayout = {
 }
 
 const ShowBoat = (props) => {
+    const { user, msgAlert, boat, trip, triggerRegresh } = props
+
     const [boat, setBoat] = useState(null)
     const [editModalShow, setEditModalShow] = useState(false)
     const [reviewModalShow, setReviewModalShow] = useState(false)
     const [updated, setUpdated] = useState(false)
 
-    const { id } = useParams()
+    // const { id } = useParams()
     const navigate = useNavigate()
 
-    const { user, msgAlert } = props
     console.log('user in ShowBoat props', user)
     console.log('msgAlert in ShowBoat props', msgAlert)
 
     useEffect(() => {
-        getOneBoat(id)
+        getOneBoat(trip.id, boat.id)
             .then(res => setBoat(res.data.boat))
             .catch(err => {
                 msgAlert({
@@ -42,7 +43,7 @@ const ShowBoat = (props) => {
 
     // remove boat
     const deleteBoat = () => {
-        removeBoat(user, boat.id)
+        removeBoat(user, trip.id, boat.id)
             //success
             .then(() => {
                 msgAlert({
@@ -51,7 +52,7 @@ const ShowBoat = (props) => {
                     variant: 'success'
                 })
             })
-            .then(() => {navigate('/')})
+            .then(() => {navigate(`/trips/${trip.id}`)})
             // failure
             .catch(err => {
                 msgAlert({
@@ -89,16 +90,14 @@ const ShowBoat = (props) => {
                     <Card.Header>{ boat.name }</Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            <div><small></small></div>
-                            <div><small></small></div>
-                            <div><small></small></div>
-                            <div><small></small></div>
+                            <div><small>Cpt. { boat.captain }</small></div>
+                            <div><small>Passengers: {boat.passengers}</small></div>
+                            <div><small>{ boat.length } ft.</small></div>
                             <div>
                                 <small>
-                                    Pets Allowed?: { boat.petsAllowed ? 'yes' : 'no' }
+                                    Pets Allowed?: { boat.petsAllowed ? 'Yes' : 'No' }
                                 </small>
                             </div>
-                            <div><small></small></div>
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>

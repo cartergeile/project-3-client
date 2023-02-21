@@ -14,12 +14,13 @@ const NewBoatModal = (props) => {
 
         setBoat(prevBoat => {
             const updatedName = e.target.name
-            let updatedValue = e.target.updatedValue
+            let updatedValue = e.target.value
 
             if (e.target.type === 'number') {
                 updatedValue = parseInt(e.target.value)
             }
-            if (updatedName === 'petsAllowed' && !e.target.checked) {
+
+            if (updatedName === 'petsAllowed' && e.target.checked) {
                 updatedValue = true 
             } else if (updatedName === 'petsAllowed' && !e.target.checked) {
                 updatedValue = false
@@ -28,7 +29,9 @@ const NewBoatModal = (props) => {
             const updatedBoat = {
                 [updatedName] : updatedValue
             }
+
             console.log('the boat', updatedBoat)
+
             return {
                 ...prevBoat, ...updatedBoat
             }
@@ -68,7 +71,7 @@ const NewBoatModal = (props) => {
                     boat={boat}
                     handleChange={onChange}
                     handleSubmit={onSubmit}
-                    heading={`Add a boat`}
+                    heading="Add a boat"
                 />
             </Modal.Body>
         </Modal>

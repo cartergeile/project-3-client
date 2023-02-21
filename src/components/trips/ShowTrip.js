@@ -5,8 +5,9 @@ import { getOneTrip, removeTrip, updateTrip } from '../../api/trips'
 import { getTripsFailure, removeTripFailure, removeTripSuccess } from '../shared/AutoDismissAlert/messages'
 import LoadingScreen from '../shared/LoadingScreen'
 import EditTripModal from './EditTripModal'
-import ShowBoat from '../boats/ShowBoat'
+// import ShowBoat from '../boats/ShowBoat'
 import NewBoatModal from '../boats/NewBoatModal'
+import BoatsIndex from '../boats/BoatsIndex'
 
 const boatCardContainerLayout = {
     display: 'flex',
@@ -61,13 +62,12 @@ const ShowTrip = (props) => {
     if (trip) {
         if (trip.boats.length > 0) {
             boatCards = trip.boats.map(boat => (
-                <ShowBoat
+                <BoatsIndex
                     key={boat.id}
                     boat={boat}
                     user={user}
                     trip={trip}
                     msgAlert={msgAlert}
-                    triggerRefresh={() => setUpdated(prev => !prev)}
                 />
             ))
         }
@@ -79,17 +79,12 @@ const ShowTrip = (props) => {
 
     return (
         <>
-            <Container className='m-2'>
-                <Card>
-                    <Card.Header>{trip.location}</Card.Header>
-                    <Card.Body>
-                        <Card.Text>
-                            <div><small>City: {trip.city}</small></div>
-                            <div><small>Start Date: {trip.startDate}</small></div>
-                            <div><small>End Date: {trip.endDate}</small></div>
-                        </Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
+            <h1 className="text-center">{trip.location}</h1>
+            <h2 className="text-center">{trip.city}</h2>
+            <h3 className="text-center">{trip.formattedStartDate} – {trip.formattedEndDate}</h3>
+                        <Container className="m-2" style={boatCardContainerLayout}>
+                            {boatCards}
+                        </Container>
                         <div className="d-grid gap-2">
                             <Button
                                 className="m-2"
@@ -120,12 +115,6 @@ const ShowTrip = (props) => {
                             :
                             null
                         }
-                    </Card.Footer>
-                </Card>
-            </Container>
-            <Container className="m-2" style={boatCardContainerLayout}>
-                {boatCards}
-            </Container>
             <EditTripModal 
                 user={user}
                 show={editModalShow}
@@ -137,6 +126,7 @@ const ShowTrip = (props) => {
             />
             <NewBoatModal
                 trip={trip}
+                user={user}
                 show={boatModalShow}
                 handleClose={() => setBoatModalShow(false)}
                 msgAlert={msgAlert}
