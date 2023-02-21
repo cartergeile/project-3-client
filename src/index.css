@@ -65,10 +65,10 @@ code {
 .boats {
   padding: 20px;
   height: 250px;
-  opacity: 80%;
+  opacity: 100%;
   color: rgb(246, 244, 244);
   background-color: gray !important;
-  background: transparent
+  background: transparent;
  
 }
 
