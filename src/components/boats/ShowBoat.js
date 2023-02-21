@@ -34,19 +34,8 @@ const ShowBoat = (props) => {
     console.log('boatId', boatId)
     console.log('get one boat', getOneBoat(user, tripId, boatId))
 
-    useEffect(() => {getOneTrip(tripId)
-        .then(res => {
-            console.log('trip res data', res.data)
-            setTrip(res.data.trip)
-        })
-        .catch(err => {
-            msgAlert({
-                heading: 'Error',
-                message: 'Could not lookup trip',
-                variant: 'danger'
-            })
-        })
-})
+    getOneTrip(tripId)
+        .then(res => setTrip(res.data.trip))
 
     useEffect(() => {
         getOneBoat(user, tripId, boatId)
@@ -105,8 +94,6 @@ const ShowBoat = (props) => {
     if(!boat) {
         return <LoadingScreen />
     }
-
-    
 
     return (
         <>

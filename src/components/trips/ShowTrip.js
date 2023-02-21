@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { Container, Card, Button } from 'react-bootstrap'
+import { Container, Button } from 'react-bootstrap'
 import { getOneTrip, removeTrip, updateTrip } from '../../api/trips'
 import { getTripsFailure, removeTripFailure, removeTripSuccess } from '../shared/AutoDismissAlert/messages'
 import LoadingScreen from '../shared/LoadingScreen'
