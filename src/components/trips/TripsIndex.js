@@ -45,8 +45,10 @@ const TripsIndex = (props) => {
         <Card key={ trip.id } style={{ width: '30%', margin: 5 }}>
             <Card.Header>{ trip.location }</Card.Header>
             <Card.Body>
+                <Card.Title>{ trip.city }</Card.Title>
                 <Card.Text>
-                    <Link to={`/trips/${trip.id}`} className="btn btn-info">View { trip.location }</Link>
+                {trip.formattedStartDate} – {trip.formattedEndDate} <br/>
+                    <Link to={`/trips/${trip.id}`} className="btn btn-outline-primary">View { trip.location }</Link>
                 </Card.Text>
                 { trip.owner ?
                 <Card.Footer>

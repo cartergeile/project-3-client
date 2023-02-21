@@ -16,11 +16,10 @@ const reviewCardContainerLayout = {
 }
 
 const ShowBoat = (props) => {
-    const { user, msgAlert } = props
-    const { tripId, boatId } = useParams()
+    const { user, msgAlert, trip, triggerRefresh } = props
+    // const { tripId, boatId } = useParams()
     const navigate = useNavigate()
 
-    const [trip, setTrip] = useState(null)
     const [boat, setBoat] = useState(null)
     const [editModalShow, setEditModalShow] = useState(false)
     const [reviewModalShow, setReviewModalShow] = useState(false)
@@ -30,26 +29,12 @@ const ShowBoat = (props) => {
     console.log('msgAlert in ShowBoat props', msgAlert)
     console.log('trip in ShowBoat props', trip)
     console.log('boat in showboat', boat)
-    console.log('tripId', tripId)
-    console.log('boatId', boatId)
-    console.log('get one boat', getOneBoat(user, tripId, boatId))
-
-    useEffect(() => {getOneTrip(tripId)
-        .then(res => {
-            console.log('trip res data', res.data)
-            setTrip(res.data.trip)
-        })
-        .catch(err => {
-            msgAlert({
-                heading: 'Error',
-                message: 'Could not lookup trip',
-                variant: 'danger'
-            })
-        })
-})
+    // console.log('tripId', tripId)
+    // console.log('boatId', boatId)
+    // console.log('get one boat', getOneBoat(user, tripId, boatId))
 
     useEffect(() => {
-        getOneBoat(user, tripId, boatId)
+        getOneBoat(user, trip.id, boat.id)
             .then(res => {
                 console.log('boat res data', res.data)
                 setBoat(res.data.boat)
@@ -65,7 +50,7 @@ const ShowBoat = (props) => {
 
     // remove boat
     const deleteBoat = () => {
-        removeBoat(user, tripId, boatId)
+        removeBoat(user, trip.id, boat.id)
             //success
             .then(() => {
                 msgAlert({
@@ -74,7 +59,7 @@ const ShowBoat = (props) => {
                     variant: 'success'
                 })
             })
-            .then(() => {navigate(`/trips/${tripId}`)})
+            .then(() => {navigate(`/trips/${trip.id}`)})
             // failure
             .catch(err => {
                 msgAlert({
@@ -105,8 +90,6 @@ const ShowBoat = (props) => {
     if(!boat) {
         return <LoadingScreen />
     }
-
-    
 
     return (
         <>
@@ -178,9 +161,9 @@ const ShowBoat = (props) => {
                 msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated(prev => !prev)}
                 boat={boat}
-                tripId={tripId}
+                // tripId={tripId}
             />
-            <NewReviewModal
+            {/* <NewReviewModal
                 boat={boat}
                 user={user}
                 trip={trip}
@@ -188,7 +171,7 @@ const ShowBoat = (props) => {
                 handleClose={() => setReviewModalShow(false)}
                 msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated(prev => !prev)}
-            />
+            /> */}
         </>
     )
 }
