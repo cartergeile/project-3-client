@@ -35,7 +35,7 @@ const authenticatedOptions = (
 
 		<NavDropdown title='Destinations' id='basic-nav-dropdown'>
 			<NavDropdown.Item className='m-2'>
-				<Link to='AntHome'> Antarctica</Link>
+				<Link to=''> Antarctica</Link>
 			</NavDropdown.Item>
 			<NavDropdown.Item className='m-2'>
 				<Link to='CarrHome'> Caribbean</Link>
@@ -71,7 +71,10 @@ const unauthenticatedOptions = (
 		    <Link to='sign-in' style={linkStyle}>Sign In</Link>
         </Nav.Item>
 
-	
+
+	 	<Nav.Item className='m-2'>
+		    <Link to='' style={linkStyle}>Contact Us</Link>
+        </Nav.Item>
 	</>
 )
 
