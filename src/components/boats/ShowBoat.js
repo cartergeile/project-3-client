@@ -16,10 +16,11 @@ const reviewCardContainerLayout = {
 }
 
 const ShowBoat = (props) => {
-    const { user, msgAlert, trip, triggerRefresh } = props
-    // const { tripId, boatId } = useParams()
+    const { user, msgAlert } = props
+    const { tripId, boatId } = useParams()
     const navigate = useNavigate()
 
+    const [trip, setTrip] = useState(null)
     const [boat, setBoat] = useState(null)
     const [editModalShow, setEditModalShow] = useState(false)
     const [reviewModalShow, setReviewModalShow] = useState(false)
@@ -29,12 +30,15 @@ const ShowBoat = (props) => {
     console.log('msgAlert in ShowBoat props', msgAlert)
     console.log('trip in ShowBoat props', trip)
     console.log('boat in showboat', boat)
-    // console.log('tripId', tripId)
-    // console.log('boatId', boatId)
-    // console.log('get one boat', getOneBoat(user, tripId, boatId))
+    console.log('tripId', tripId)
+    console.log('boatId', boatId)
+    console.log('get one boat', getOneBoat(user, tripId, boatId))
+
+    getOneTrip(tripId)
+        .then(res => setTrip(res.data.trip))
 
     useEffect(() => {
-        getOneBoat(user, trip.id, boat.id)
+        getOneBoat(user, tripId, boatId)
             .then(res => {
                 console.log('boat res data', res.data)
                 setBoat(res.data.boat)
@@ -50,7 +54,7 @@ const ShowBoat = (props) => {
 
     // remove boat
     const deleteBoat = () => {
-        removeBoat(user, trip.id, boat.id)
+        removeBoat(user, tripId, boatId)
             //success
             .then(() => {
                 msgAlert({
@@ -59,7 +63,7 @@ const ShowBoat = (props) => {
                     variant: 'success'
                 })
             })
-            .then(() => {navigate(`/trips/${trip.id}`)})
+            .then(() => {navigate(`/trips/${tripId}`)})
             // failure
             .catch(err => {
                 msgAlert({
@@ -161,9 +165,9 @@ const ShowBoat = (props) => {
                 msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated(prev => !prev)}
                 boat={boat}
-                // tripId={tripId}
+                tripId={tripId}
             />
-            {/* <NewReviewModal
+            <NewReviewModal
                 boat={boat}
                 user={user}
                 trip={trip}
@@ -171,7 +175,7 @@ const ShowBoat = (props) => {
                 handleClose={() => setReviewModalShow(false)}
                 msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated(prev => !prev)}
-            /> */}
+            />
         </>
     )
 }
