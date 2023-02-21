@@ -18,7 +18,7 @@ const ReviewForm = (props) => {
                         onChange={handleChange}
                     />
                 </Form.Group>
-                <Button className="m-2" type="submit">Submit</Button>
+                <Button className="m-2" type="submit">Post</Button>
             </Form>
         </Container>
     )

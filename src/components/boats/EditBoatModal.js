@@ -7,7 +7,7 @@ import messages from '../shared/AutoDismissAlert/messages'
 
 const EditBoatModal = (props) => {
     // destructure props
-    const { user, show, handleClose, updateBoat, msgAlert, triggerRefresh } = props
+    const { tripId, user, show, handleClose, updateBoat, msgAlert, triggerRefresh } = props
 
     const [boat, setBoat] = useState(props.boat)
 
@@ -43,7 +43,7 @@ const EditBoatModal = (props) => {
     const onSubmit = (e) => {
         e.preventDefault()
 
-        updateBoat(user, boat)
+        updateBoat(user, tripId, boat)
             // closes modal
             .then(() => handleClose())
             // success message

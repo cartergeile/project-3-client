@@ -7,6 +7,8 @@ import { Modal } from 'react-bootstrap'
 const NewBoatModal = (props) => {
     const { user, msgAlert, trip, show, handleClose, triggerRefresh } = props
 
+    console.log('trip in props', trip)
+    
     const [boat, setBoat] = useState({})
 
     const onChange = (e) => {

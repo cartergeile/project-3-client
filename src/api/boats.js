@@ -4,8 +4,14 @@ import axios from 'axios'
 
 // READ -> Show one boat
 // GET /boats/:tripId/:boatId
-export const getOneBoat = (tripId, boatId) => {
-    return axios(`${apiUrl}/boats/${tripId}/${boatId}`)
+export const getOneBoat = (user, tripId, boatId) => {
+    return axios({
+        url: `${apiUrl}/boats/${tripId}/${boatId}`,
+        method: 'GET',
+        // headers: {
+        //     Authorization: `Token token=${user.token}`
+        // }
+    })
 }
 
 // Create (create boat)
